@@ -1,0 +1,297 @@
+body
+{
+    background-color: #1d1d1d;
+}
+.float-container 
+{
+    padding: 20px;
+    margin-bottom: 5%;
+}
+.float-child 
+{
+    width: 30%;
+    float: left;
+    padding: 20px;
+}  
+#detailsIMG
+{
+    border: 5px solid #fff;
+    margin-top: 9%;
+    margin-left: 5%;
+}
+#icons
+{
+    width: 25%;
+    height: 40px;
+    padding-left: 3%;
+}
+.socail
+{
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-left: 10%;
+}
+.socail li
+{
+    cursor: pointer;
+    overflow: hidden;
+    margin: 9px 0 10px;
+    display: inline-block;
+}
+#liTwitter
+{
+    background-color: #1da1f2;
+    width: 40px;
+    padding-left: 4%;
+    padding-top: 2%;
+}
+#liPinterest
+{
+    background-color: #cb2027;
+    width: 35px;
+    padding-left: 4%;
+    padding-top: 2%;
+}
+#liFB
+{
+    background-color: #1877f2;
+    width: 35px;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+#liInstagram
+{
+    background-color: #cc3c99;
+    width: 40px;
+    padding-left: 4%;
+    padding-top: 2%;
+}
+#twitter
+{
+    color: #fff;
+    font-size: 30px;
+    height: 39px;
+}
+#pinterest
+{
+    color: #fff;
+    font-size: 30px;
+    height: 39px;
+}
+#fb
+{
+    color: #fff;
+    font-size: 30px;
+    height: 39px;
+}
+#instagram
+{
+    color: #fff;
+    font-size: 30px;
+    height: 39px;
+}
+h1 , h2 , h3
+{
+    color: #fff;
+}
+#likes
+{
+    font-size: 18px;
+    color: #6ac045;
+}
+#users
+{
+    color: yellow;
+    font-size: 18px;
+}
+#mdb
+{
+    color: yellowgreen;
+    font-size: 40px;
+}
+.pMovie
+{
+    color: #fff;
+    font-size: 18px;
+}
+#similarMovies img
+{
+    height: 150px;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    border: 4px solid #fff;
+}
+#imgleft
+{
+    margin-left: 20%;
+}
+.float-child1
+{
+    margin-top: 3%;
+    width: 35%;
+    float: left;
+    padding: 20px;
+}
+.pragraph
+{
+    color: grey;
+    font-size: 18px;
+}
+.guide
+{
+    color: #6ac045;
+}
+.float-child1
+{
+    padding-right: 50%;
+} 
+.float-child3
+{
+    padding-right: 50%;
+    overflow-y: scroll;
+    margin-left: 10%;
+    height: 650px;
+} 
+.fa-comment
+{
+    margin-right: 3%;
+}
+.ContainerComment
+{
+    padding: 20px;
+    height: 400px;
+    width: 43%;
+}
+/* width */
+::-webkit-scrollbar 
+{
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: grey; 
+}   
+/* Handle */
+::-webkit-scrollbar-thumb 
+{
+    background: grey; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+{
+    background: black; 
+}
+.comment
+{
+    width: 200%;
+    height: 100px;
+    margin-bottom: 8%;
+    box-shadow: 2px 2px 2px 2px black;
+}
+.userImg
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.commentTxt
+{
+    display: inline-block;
+    margin-left: 2%;
+    color: grey;
+}
+.likes
+{
+    font-size: 18px;
+    color: #6ac045;
+    float: right;
+}
+.divComment
+{
+    width: 11%;
+    float: right;
+    margin-right: 2%;
+}
+.btnLoad
+{
+    cursor: pointer;
+    margin-top: 5%;
+    color: #fff;
+    width: 201%;
+    height: 50px;
+    font-weight: bold;
+    background-color: #6ac045;
+    border: none;
+    position: static;
+    font-size: 18px;
+}
+.btnlogin
+{
+    cursor: pointer;
+    margin-top: 5%;
+    color: #fff;
+    width: 50%;
+    height: 50px;
+    font-weight: bold;
+    background-color: #171717;
+    border: none;
+    position: static;
+    font-size: 18px;
+    margin-left: 26%;
+}
+.float-childReview
+{
+    left: 50%;
+    position: absolute;
+    top: 138%;
+}
+.userReview
+{
+    font-weight: bold;
+}
+.reviewNum
+{
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+}
+.review
+{
+    width: 80%;
+}
+.reviewP
+{
+    color: grey;
+    margin-left: 2%;
+}
+.hrP
+{
+    color:gray;
+    width: 80%;
+    margin-left: 2%;
+}
+.moreReviews
+{
+    color: grey;
+    font-weight: bold;
+    left: 80%;
+    position: absolute;
+    top: 253%;
+    cursor: pointer;
+}
+.fixedUl
+{
+    position: fixed;
+    right: -14%;
+    width: 20%;
+    bottom: 50%;
+}
+.fixedUl ul 
+{
+    list-style: none;
+    cursor: pointer;
+}
