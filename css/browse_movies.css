@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    /* font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif; */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+/*  Start Search Section  */
+#SearchSection {
+    background-color: #171717;
+    color: #5a5a5a;
+}
+#SearchSection .container {
+    width: 70%;
+    padding: 2rem ;
+    margin: auto;
+}
+#searchComponent {
+    color: #5a5a5a;
+    padding: 2rem;
+}
+#serachBox, #searchComponent {
+    margin-bottom: .5rem;
+}
+#searchComponent h3 {
+    font-size: 1.6rem;
+    margin-bottom: .5rem;
+}
+
+#searchInp {
+    padding: .7rem;
+    border-radius: 4px;
+    border: none;
+    width: 85%;
+    background-color: #282828;
+    color: white;
+    font-size: 1rem;
+}
+#searchBtn {
+    padding: .7rem;
+    border-radius: 4px;
+    border: none;
+    width: 13%;
+    float: right;
+    background-color: #6ac045;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+}
+#searchBtn:hover {
+    background-color: #5da93c;
+}
+ul#searchOptions {
+    list-style: none;
+}
+ul#searchOptions li {
+    display: inline-block;
+    margin: .7rem;
+}
+ul#searchOptions li label {
+    margin-bottom: .5rem;
+    display: block;
+}
+ul#searchOptions li select {
+    padding: .3rem 1rem;
+    border-radius: 4px;
+    background-color: #282828;
+    color: #a2a29e;
+}
+/*  End Search Section */
+
+/* Start Listing Section */
+#listingSection {
+    background-color: #1d1d1d;
+    color: #FFF;
+}
+#listingSection .container {
+    width: 80%;
+    padding: 2rem  0;
+    margin: auto;
+}
+#listingSection h3 {
+    color: #6ac045;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+} 
+#listingSection h3 span {
+    font-weight: bold;
+    font-size: 1.5rem;
+}   
+#pagination ul {
+    list-style: none;
+    text-align: center;
+}
+
+#pagination ul li {
+    display: inline-block;
+    margin: .3rem;
+}
+#pagination ul li input{
+    padding: .7rem;
+    background-color: #1d1d1d;
+    border: none;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    border: .1px solid #a2a29e;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+#pagination ul li.active input{
+    border-color: #6ac045;
+}
+#pagination ul li input:hover{
+    background-color: #5da93c;
+}
+#moviesListing {
+    padding: 1.5rem;
+    width: 100%;
+}
+#moviesListing table {
+    width: 100%;
+}
+#moviesListing table .movie {
+    margin: .5rem 1rem;
+}
+.imgPart {
+    border: 2px solid #FFF;
+    border-radius: 9px;
+    height: 250px;
+    cursor: pointer;
+    position: relative;
+}
+.active .imgPart img {
+    opacity: .2;
+}
+.imgPart .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    text-align: center;
+    padding: 1rem 1rem;
+    z-index: 22222;
+}
+.imgPart .shadow p{
+    margin: .8rem;
+    font-size: 1.6rem;
+}
+.imgPart .shadow p svg {
+    color: #6ac045 !important;
+}
+.imgPart .shadow input {
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    background-color: #6ac045;
+    border: none;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.imgPart .shadow input:hover{
+    background-color: #5da93c;
+}
+.imgPart img {
+    border-radius: 9px;
+    width: 100%;
+    height: 100%;
+}
+.textPart {
+    margin-top: .7rem;
+}
+.textPart p:nth-child(2) {
+    font-size: smaller;
+    color: #a2a29e;
+}
+/* End Listing Section */
