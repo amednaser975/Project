@@ -112,7 +112,7 @@ ul#searchOptions li select {
     font-weight: 500;
 }
 #pagination ul li.active input{
-    border-color: #6ac045;
+    background-color: #6ac045;
 }
 #pagination ul li input:hover{
     background-color: #5da93c;
@@ -130,7 +130,7 @@ ul#searchOptions li select {
 .imgPart {
     border: 2px solid #FFF;
     border-radius: 9px;
-    height: 250px;
+    height: 300px;
     cursor: pointer;
     position: relative;
 }
@@ -138,6 +138,7 @@ ul#searchOptions li select {
     opacity: .2;
 }
 .imgPart .shadow {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
