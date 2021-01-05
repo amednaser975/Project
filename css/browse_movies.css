@@ -111,7 +111,7 @@ ul#searchOptions li select {
     font-size: 0.8rem;
     font-weight: 500;
 }
-#pagination ul li.active input{
+#pagination ul li.active input {
     background-color: #6ac045;
 }
 #pagination ul li input:hover{
