@@ -33,7 +33,7 @@
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfMovies[i].rating}</p>
                                                         <p>${listOfMovies[i].genres != undefined? listOfMovies[i].genres[0]: "Ahmed"}</p>
-                                                        <div><input type="button" value="View Details"></div>
+                                                        <div><a href="../movieDetails.html/789" target="_blank">View Details</a></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
