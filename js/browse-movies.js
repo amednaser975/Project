@@ -33,7 +33,7 @@
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfMovies[i].rating}</p>
                                                         <p>${listOfMovies[i].genres != undefined? listOfMovies[i].genres[0]: "Ahmed"}</p>
-                                                        <div><a href="../movieDetails.html/789" target="_blank">View Details</a></div>
+                                                        <div><a href="../movieDetails.html" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i].id}"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
@@ -110,6 +110,7 @@
             $(this).children(".shadow").fadeOut(300);
         }
     );
+
     myBtn.on("click", function (e) {
         var btnVal = parseInt(e.target.value);  
         console.log(btnVal);
@@ -118,3 +119,32 @@
         btnVal--;
         displayMovies(11*btnVal, (10*btnVal)+12);
     })
+
+    var MovieDetails;
+    var movieImg = $("#movieImg");
+    console.log("tag",movieImg);
+    var titleMovie = $("#titleMovie");
+    var yearMovie = $("#yearMovie");
+    var geners = $("#geners");
+    var movieLikes = $("#movieLikes");
+    var movieAudience = $("#movieAudience");
+    var movieRate = $("movieRate");
+    var movieSynopsis = $("#movieSynopsis");
+    var movieUploadedDate = $("#movieUploadedDate");
+
+    $("#tableBody").on("click" , ".MovieDetails" , function(){
+        var movieID = $(this).next().val();  // ID Of Movie
+        var xhrMovieDetails = new XMLHttpRequest();
+        xhrMovieDetails.open("GET", "https://yts.mx/api/v2/movie_details.json?movie_id=" + movieID);
+        xhrMovieDetails.send();
+        xhrMovieDetails.onreadystatechange = function () {
+            if(this.readyState = 4 && this.status == 200 ) {
+                MovieDetails = (JSON.parse(this.responseText)).data.movie;    
+                console.log("back",MovieDetails.medium_cover_image); 
+                console.log("uuuuuuu",MovieDetails); 
+                console.log("tag",movieImg);
+                movieImg.src = MovieDetails.medium_cover_image;
+            }
+    }});
+
+   
