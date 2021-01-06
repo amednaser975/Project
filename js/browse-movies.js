@@ -25,99 +25,80 @@
                 movieList[i].vote_average, movieList[i].genre_ids, movieList[i].overview,
                 movieList[i].poster_path, movieList[i].original_language))
         }
-        displayMovies();
+        displayMovies(listOfMovies);
     }
-    function displayMovies() {
-        console.log(listOfMovies)
+    function displayMovies(listOfItems) {
         tableBody.innerHTML = "";
-        for (var i = 0; i < listOfMovies.length; i+=5) {
+        for (var i = 0; i < listOfItems.length; i+=4) {
             
             tableBody.innerHTML += `<tr>
                                         <td>
                                             <div class="movie">
                                                 <div class="imgPart">
-                                                    <img src="${imgPrefix+listOfMovies[i].poster_path!= undefined?imgPrefix+listOfMovies[i].poster_path: ""}" alt=""/>
+                                                    <img src="${listOfItems[i].poster_path!= null?imgPrefix+listOfItems[i].poster_path: "./images/notFound.png" }" alt=""/>
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
-                                                        <p>${listOfMovies[i].vote_average}</p>
-                                                        <p>${listOfMovies[i].genre_ids != undefined? listOfMovies[i].genre_ids[0]: "Ahmed"}</p>
+                                                        <p>${listOfItems[i].vote_average}</p>
+                                                        <p>${listOfItems[i].genre_ids != undefined? getGenreName(listOfItems[i].genre_ids[0]): ""}</p>
                                                         <div><a href="../movieDetails.html" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i].id}"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
-                                                    <p>${listOfMovies[i].title}</p>
-                                                    <p>${listOfMovies[i].release_date}</p>
+                                                    <p>${listOfItems[i].title}</p>
+                                                    <p>${listOfItems[i].release_date}</p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="movie">
                                                 <div class="imgPart">
-                                                    <img src="${imgPrefix+listOfMovies[i+1].poster_path!= undefined?imgPrefix+listOfMovies[i+1].poster_path: ""}" alt=""/>
+                                                    <img src="${listOfItems[i+1].poster_path!= null?imgPrefix+listOfItems[i+1].poster_path: "./images/notFound.png"}" alt=""/>
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
-                                                        <p>${listOfMovies[i+1].vote_average}</p>
-                                                        <p>${listOfMovies[i+1].genre_ids != undefined? listOfMovies[i+1].genre_ids[0]: "Ahmed"}</p>
+                                                        <p>${listOfItems[i+1].vote_average}</p>
+                                                        <p>${listOfItems[i+1].genre_ids != undefined? getGenreName(listOfItems[i+1].genre_ids[0]): ""}</p>
                                                         <div><input type="button" value="View Details"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
-                                                <p>${listOfMovies[i+1].title}</p>
-                                                <p>${listOfMovies[i+1].release_date}</p>
+                                                <p>${listOfItems[i+1].title}</p>
+                                                <p>${listOfItems[i+1].release_date}</p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="movie">
                                                 <div class="imgPart">
-                                                    <img src="${imgPrefix+listOfMovies[i+2].poster_path!= undefined?imgPrefix+listOfMovies[i+2].poster_path: ""}" alt=""/>
+                                                    <img src="${listOfItems[i+2].poster_path!= null?imgPrefix+listOfItems[i+2].poster_path: "./images/notFound.png"}" alt=""/>
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
-                                                        <p>${listOfMovies[i+2].vote_average}</p>
-                                                        <p>${listOfMovies[i+2].genre_ids != undefined? listOfMovies[i+2].genre_ids[0]: "Ahmed"}</p>
+                                                        <p>${listOfItems[i+2].vote_average}</p>
+                                                        <p>${listOfItems[i+2].genre_ids != undefined? getGenreName(listOfItems[i+2].genre_ids[0]): ""}</p>
                                                         <div><input type="button" value="View Details"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
-                                                    <p>${listOfMovies[i+2].title}</p>
-                                                    <p>${listOfMovies[i+2].release_date}</p>
+                                                    <p>${listOfItems[i+2].title}</p>
+                                                    <p>${listOfItems[i+2].release_date}</p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                         <div class="movie">
                                             <div class="imgPart">
-                                                <img src="${imgPrefix+listOfMovies[i+3].poster_path!= undefined?imgPrefix+listOfMovies[i+3].poster_path: ""}" alt=""/>
+                                                <img src="${listOfItems[i+3].poster_path!= null?imgPrefix+listOfItems[i+3].poster_path: "./images/notFound.png"}" alt=""/>
                                                 <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
-                                                        <p>${listOfMovies[i+3].vote_average}</p>
-                                                        <p>${listOfMovies[i+3].genre_ids != undefined? listOfMovies[i+3].genre_ids[0]: "Ahmed"}</p>
+                                                        <p>${listOfItems[i+3].vote_average}</p>
+                                                        <p>${listOfItems[i+3].genre_ids != undefined? getGenreName(listOfItems[i+3].genre_ids[0]): ""}</p>
                                                         <div><input type="button" value="View Details"></div>
                                                     </div>
                                             </div>
                                             <div class="textPart">
-                                                <p>${listOfMovies[i+3].title}</p>
-                                                <p>${listOfMovies[i+3].release_date}</p>
+                                                <p>${listOfItems[i+3].title}</p>
+                                                <p>${listOfItems[i+3].release_date}</p>
                                             </div>
                                         </div>
-                                        </td>
-                                        
-                                        <td>
-                                            <div class="movie">
-                                                <div class="imgPart">
-                                                    <img src="${imgPrefix+listOfMovies[i+4].poster_path!= undefined?imgPrefix+listOfMovies[i+4].poster_path: ""}" alt=""/>
-                                                    <div class="shadow">
-                                                            <p><i class="fas fa-star"></i></p>
-                                                            <p>${listOfMovies[i+4].vote_average}</p>
-                                                            <p>${listOfMovies[i+4].genre_ids != undefined? listOfMovies[i+4].genre_ids[0]: "Ahmed"}</p>
-                                                            <div><input type="button" value="View Details"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="textPart">
-                                                    <p>${listOfMovies[i+4].title}</p>
-                                                    <p>${listOfMovies[i+4].release_date}</p>
-                                                </div>
-                                            </div>
                                         </td>
                                     </tr>`;
         }
@@ -273,4 +254,70 @@
                 console.log("tag",movieImg);
                 movieImg.src = MovieDetails.medium_cover_image;
             }
+
     }});
+
+
+    var queryStr , type , year;
+    var searchBtn = $("#searchBtn");
+    $("#searchInp").on("change", function () {
+        queryStr = $(this).val();
+    });
+
+    $("#typeInp").on("change", function () {
+        type = $(this).val();
+        if(type == 'all')
+            type = 'multi';
+    });
+
+    $("#yearInp").on("change", function () {
+        year = $(this).val();
+    });
+
+    var searchArr = [];
+    searchBtn.on('click', function(){
+    var xhrSearch = new XMLHttpRequest();
+    if(year != 'all' && type != 'all')
+    {
+        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/"+type+"?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
+    }
+    else if(year != 'all' && type == 'all')
+    {
+        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/multi?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
+    }
+    else if(year == 'all' && type != 'all')
+    {
+        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/"+type+"?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
+    }
+    else if(year == 'all' && type == 'all')
+    {
+        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/multi?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
+    }
+    xhrSearch.send();
+    xhrSearch.onreadystatechange = function (e) {
+        if(this.readyState == 4 && this.status == 200 ) {
+            searchArr = JSON.parse(this.responseText).results;
+            console.log(searchArr);
+            displayMovies(searchArr);
+        }
+    }
+    });
+
+    var genersArr = [];
+    var xhrSearch = new XMLHttpRequest();
+    xhrSearch.open("GET", "https://api.themoviedb.org/3/genre/movie/list?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US");
+    xhrSearch.send();
+    xhrSearch.onreadystatechange = function (e) {
+        if(this.readyState == 4 && this.status == 200 ) {
+            genersArr = (JSON.parse(this.responseText)).genres;
+        }
+    }
+
+    function getGenreName(genderId)
+    {
+        for(var i = 0 ; i < genersArr.length ; i++)
+        {
+            if(genersArr[i].id = genderId)
+                return genersArr[i].name;
+        }
+    }
