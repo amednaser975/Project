@@ -16,67 +16,33 @@
                 <div id="searchComponent">
                     <h3>Search Term:</h3>
                     <div id="serachBox">
-                        <input type="search" id="searchInp">
+                        <input type="text" id="searchInp">
                         <input type="button" id="searchBtn" value="Search">
                     </div>
                     <ul id="searchOptions">
                         <li>
-                            <label>Quality:</label>
-                            <select name="quality" id="qualityInp">
-                                <option value="All" selected>All</option>
-                                <option value="720p">720p</option>
-                                <option value="1080p">1080p</option>
-                                <option value="2160p">2160p</option>
-                                <option value="3D">3D</option>
+                            <label>Type:</label>
+                            <select name="type" id="typeInp">
+                                <option value="all" selected>All</option>
+                                <option value="movie">Movies</option>
+                                <option value="tv">TV</option>
                             </select>
                         </li>
-                        <li>
-                            <label>Genre:</label>
-                            <select name="genre" id="genreInp">
-                                <option value="All" selected>All</option>
-                                <option value="Action">Action</option>
-                                <option value="Animation">Animation</option>
-                                <option value="Comedy">Comedy</option>
-                                <option value="Drama">Drama</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Rating:</label>
-                            <select name="rating" id="ratingInp">
-                                <option value="All" selected>All</option>
-                                <option value="+9">+9</option>
-                                <option value="+7">+7</option>
-                                <option value="+5">+5</option>
-                                <option value="+1">+1</option>
-                            </select>
                         <li>
                             <label>Year:</label>
                             <select name="year" id="yearInp">
-                                <option value="All" selected>All</option>
+                                <option value="all" selected>All</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
-                                <option value="2015-2018">2015-2018</option>
-                                <option value="2010-2014">2010-2014</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Language:</label>
-                            <select name="language" id="languageInp">
-                                <option value="All" selected>All</option>
-                                <option value="English">English</option>
-                                <option value="French">French</option>
-                                <option value="Arabic">Arabic</option>
-                                <option value="Spanish">Spanish</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Order By:</label>
-                            <select name="orderBy" id="orderByInp">
-                                <option value="Latest" selected>Latest</option>
-                                <option value="Oldest">Oldest</option>
-                                <option value="Featured">Featured</option>
-                                <option value="Rating">Rating</option>
-                                <option value="Year">Year</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
                             </select>
                         </li>
                     </ul>
