@@ -87,13 +87,19 @@
         <!-- Start Listing Section -->
         <div id="listingSection">
             <div class="container">
-                <h3><span>25,002</span> YIFY Movies found</h3>
+                <h3><span id="totalNumMovies"></span> YIFY Movies found</h3>
                 <div id="pagination">
                     <ul>
+                        <li>
+                            <input type="button" id="firstBtn" class="hidden" value="« First">
+                        </li>
+                        <li>
+                            <input type="button" id="prevBtn" class="hidden" value="« Previous">
+                        </li>
                         <li class="active">
                             <input type="button" value="1">
                         </li>
-                        <li>
+                        <li id="paginitionBtn">
                             <input type="button" value="2">
                         </li>
                         <li>
@@ -103,10 +109,31 @@
                             <input type="button" value="4">
                         </li>
                         <li>
-                            <input type="button" value="Next >>">
+                            <input type="button" value="5">
                         </li>
                         <li>
-                            <input type="button" value="Last >>">
+                            <input type="button" value="6">
+                        </li>
+                        <li>
+                            <input type="button" value="7">
+                        </li>
+                        <li>
+                            <input type="button" value="8">
+                        </li>
+                        <li>
+                            <input type="button" disabled style="cursor: not-allowed;" value="...">
+                        </li>
+                        <li>
+                            <input type="button" value="999">
+                        </li>
+                        <li>
+                            <input type="button" value="1000">
+                        </li>
+                        <li>
+                            <input type="button" id="nextBtn" value="Next »">
+                        </li>
+                        <li>
+                            <input type="button" id="lastBtn" value="Last »">
                         </li>
                     </ul>
                 </div>

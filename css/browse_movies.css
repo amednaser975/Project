@@ -67,6 +67,9 @@ ul#searchOptions li select {
     background-color: #282828;
     color: #a2a29e;
 }
+.hidden {
+    display: none;
+}
 /*  End Search Section */
 
 /* Start Listing Section */

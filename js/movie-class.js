@@ -1,4 +1,4 @@
-function Movie(id, title, year, rating, runtime, genres, summary, backgroundImg, language, torrents, date_uploaded) {
+function Movie(id, title, release_date, vote_average, genre_ids, overview, poster_path, original_language) {
     Object.defineProperty(this, "id", {  
         value: id,
         configurable: false,
@@ -17,56 +17,38 @@ function Movie(id, title, year, rating, runtime, genres, summary, backgroundImg,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "year", {  
-        value: year,
+    Object.defineProperty(this, "release_date", {  
+        value: release_date,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "rating", {  
-        value: rating,
+    Object.defineProperty(this, "vote_average", {  
+        value: vote_average,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "runtime", {  
-        value: runtime,
+    Object.defineProperty(this, "genre_ids", {  
+        value: genre_ids,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "genres", {  
-        value: genres,
+    Object.defineProperty(this, "overview", {  
+        value: overview,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "summary", {  
-        value: summary,
+    Object.defineProperty(this, "poster_path", {  
+        value: poster_path,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "backgroundImg", {  
-        value: backgroundImg,
-        configurable: false,
-        enumerable:false,
-        writable:false
-    });
-    Object.defineProperty(this, "language", {  
-        value: language,
-        configurable: false,
-        enumerable:false,
-        writable:false
-    });
-    Object.defineProperty(this, "torrents", {  
-        value: torrents,
-        configurable: false,
-        enumerable:false,
-        writable:false
-    });
-    Object.defineProperty(this, "date_uploaded", {  
-        value: date_uploaded,
+    Object.defineProperty(this, "original_language", {  
+        value: original_language,
         configurable: false,
         enumerable:false,
         writable:false
