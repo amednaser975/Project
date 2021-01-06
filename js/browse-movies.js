@@ -274,5 +274,3 @@
                 movieImg.src = MovieDetails.medium_cover_image;
             }
     }});
-
-   
