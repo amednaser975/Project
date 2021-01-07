@@ -1,4 +1,4 @@
-
+    getAllGenres();
     var tableBody = document.getElementById("tableBody");
     var myBtn = $("#pagination ul li input");
     var listOfMovies = [];
@@ -28,6 +28,7 @@
         displayMovies(listOfMovies);
     }
     function displayMovies(listOfItems) {
+        console.log(listOfItems)
         tableBody.innerHTML = "";
         for (var i = 0; i < listOfItems.length; i+=4) {
             
@@ -39,8 +40,8 @@
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfItems[i].vote_average}</p>
-                                                        <p>${listOfItems[i].genre_ids != undefined? getGenreName(listOfItems[i].genre_ids[0]): ""}</p>
-                                                        <div><a href="../movieDetails.html" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i].id}"></div>
+                                                        <p>${listOfItems[i].genre_ids[0] != undefined? getGenreName(listOfItems[i].genre_ids[0]): "General"}</p>
+                                                        <div style="margin-top:4rem"><a href="../movieDetails.html?${listOfItems[i].id}" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i].id}"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
@@ -56,8 +57,8 @@
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfItems[i+1].vote_average}</p>
-                                                        <p>${listOfItems[i+1].genre_ids != undefined? getGenreName(listOfItems[i+1].genre_ids[0]): ""}</p>
-                                                        <div><input type="button" value="View Details"></div>
+                                                        <p>${listOfItems[i+1].genre_ids[0] != undefined? getGenreName(listOfItems[i+1].genre_ids[0]): "General"}</p>
+                                                        <div style="margin-top:4rem"><a href="../movieDetails.html?${listOfItems[i+1].id}" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i+1].id}"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
@@ -73,8 +74,8 @@
                                                     <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfItems[i+2].vote_average}</p>
-                                                        <p>${listOfItems[i+2].genre_ids != undefined? getGenreName(listOfItems[i+2].genre_ids[0]): ""}</p>
-                                                        <div><input type="button" value="View Details"></div>
+                                                        <p>${listOfItems[i+2].genre_ids[0] != undefined? getGenreName(listOfItems[i+2].genre_ids[0]): "General"}</p>
+                                                        <div style="margin-top:4rem"><a href="../movieDetails.html?${listOfItems[i+2].id}" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i+2].id}"></div>
                                                     </div>
                                                 </div>
                                                 <div class="textPart">
@@ -90,8 +91,8 @@
                                                 <div class="shadow">
                                                         <p><i class="fas fa-star"></i></p>
                                                         <p>${listOfItems[i+3].vote_average}</p>
-                                                        <p>${listOfItems[i+3].genre_ids != undefined? getGenreName(listOfItems[i+3].genre_ids[0]): ""}</p>
-                                                        <div><input type="button" value="View Details"></div>
+                                                        <p>${listOfItems[i+3].genre_ids[0] != undefined? getGenreName(listOfItems[i+3].genre_ids[0]): "General"}</p>
+                                                        <div style="margin-top:4rem"><a href="../movieDetails.html?${listOfItems[i+3].id}" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i+3].id}"></div>
                                                     </div>
                                             </div>
                                             <div class="textPart">
@@ -228,36 +229,6 @@
             }
         }
     })
-
-    var MovieDetails;
-    var movieImg = $("#movieImg");
-    console.log("tag",movieImg);
-    var titleMovie = $("#titleMovie");
-    var release_dateMovie = $("#release_dateMovie");
-    var geners = $("#geners");
-    var movieLikes = $("#movieLikes");
-    var movieAudience = $("#movieAudience");
-    var movieRate = $("movieRate");
-    var movieSynopsis = $("#movieSynopsis");
-    var movieUploadedDate = $("#movieUploadedDate");
-
-    $("#tableBody").on("click" , ".MovieDetails" , function(){
-        var movieID = $(this).next().val();  // ID Of Movie
-        var xhrMovieDetails = new XMLHttpRequest();
-        xhrMovieDetails.open("GET", "https://yts.mx/api/v2/movie_details.json?movie_id=" + movieID);
-        xhrMovieDetails.send();
-        xhrMovieDetails.onreadystatechange = function () {
-            if(this.readyState = 4 && this.status == 200 ) {
-                MovieDetails = (JSON.parse(this.responseText)).data.movie;    
-                console.log("back",MovieDetails.medium_cover_image); 
-                console.log("uuuuuuu",MovieDetails); 
-                console.log("tag",movieImg);
-                movieImg.src = MovieDetails.medium_cover_image;
-            }
-
-    }});
-
-
     var queryStr , type , year;
     var searchBtn = $("#searchBtn");
     $("#searchInp").on("change", function () {
@@ -266,8 +237,6 @@
 
     $("#typeInp").on("change", function () {
         type = $(this).val();
-        if(type == 'all')
-            type = 'multi';
     });
 
     $("#yearInp").on("change", function () {
@@ -275,41 +244,45 @@
     });
 
     var searchArr = [];
-    searchBtn.on('click', function(){
-    var xhrSearch = new XMLHttpRequest();
-    if(year != 'all' && type != 'all')
-    {
-        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/"+type+"?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
-    }
-    else if(year != 'all' && type == 'all')
-    {
-        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/multi?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
-    }
-    else if(year == 'all' && type != 'all')
-    {
-        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/"+type+"?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
-    }
-    else if(year == 'all' && type == 'all')
-    {
-        xhrSearch.open("GET", "https://api.themoviedb.org/3/search/multi?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
-    }
-    xhrSearch.send();
-    xhrSearch.onreadystatechange = function (e) {
-        if(this.readyState == 4 && this.status == 200 ) {
-            searchArr = JSON.parse(this.responseText).results;
-            console.log(searchArr);
-            displayMovies(searchArr);
-        }
-    }
-    });
+    searchBtn.on('click', function() {
 
+        var xhrSearch = new XMLHttpRequest();
+        if(year != 'all' && type == 'movie')
+        {
+            xhrSearch.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
+        }
+        else if(year == 'all' && type == 'movie')
+        {
+            xhrSearch.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
+        }
+        else if(year != 'all' && type == 'tv')
+        {
+            xhrSearch.open("GET", "https://api.themoviedb.org/3/search/tv?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&year="+year+"&query="+queryStr);
+        }
+        else if(year == 'all' && type == 'tv')
+        {
+            xhrSearch.open("GET", "https://api.themoviedb.org/3/search/tv?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US&page=1&include_adult=false&query="+queryStr);
+        }
+        xhrSearch.send();
+        xhrSearch.onreadystatechange = function (e) {
+            if(this.readyState == 4 && this.status == 200 ) {
+                searchArr = JSON.parse(this.responseText).results;
+                console.log(searchArr);
+                displayMovies(searchArr);
+            }
+        }
+    });
+    
     var genersArr = [];
-    var xhrSearch = new XMLHttpRequest();
-    xhrSearch.open("GET", "https://api.themoviedb.org/3/genre/movie/list?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US");
-    xhrSearch.send();
-    xhrSearch.onreadystatechange = function (e) {
-        if(this.readyState == 4 && this.status == 200 ) {
-            genersArr = (JSON.parse(this.responseText)).genres;
+    function getAllGenres() {
+
+        var xhrSearch = new XMLHttpRequest();
+        xhrSearch.open("GET", "https://api.themoviedb.org/3/genre/movie/list?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US");
+        xhrSearch.send();
+        xhrSearch.onreadystatechange = function (e) {
+            if(this.readyState == 4 && this.status == 200 ) {
+                genersArr = (JSON.parse(this.responseText)).genres;
+            }
         }
     }
 
@@ -317,7 +290,7 @@
     {
         for(var i = 0 ; i < genersArr.length ; i++)
         {
-            if(genersArr[i].id = genderId)
+            if(genersArr[i].id == genderId)
                 return genersArr[i].name;
         }
     }

@@ -159,8 +159,8 @@ ul#searchOptions li select {
 .imgPart .shadow p svg {
     color: #6ac045 !important;
 }
-.imgPart .shadow input {
-    margin-top: 1rem;
+.imgPart .shadow .MovieDetails {
+    margin-top: 2rem;
     padding: .5rem 1rem;
     background-color: #6ac045;
     border: none;
@@ -170,6 +170,7 @@ ul#searchOptions li select {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
+    text-decoration: none;
 }
 .imgPart .shadow input:hover{
     background-color: #5da93c;

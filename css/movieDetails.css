@@ -34,6 +34,7 @@ body
 }
 .socail li
 {
+    border-radius: 6px;
     cursor: pointer;
     overflow: hidden;
     margin: 9px 0 10px;
@@ -108,7 +109,7 @@ h1 , h2 , h3
 #mdb
 {
     color: yellowgreen;
-    font-size: 40px;
+    font-size: 35px;
 }
 .pMovie
 {
@@ -151,7 +152,7 @@ h1 , h2 , h3
     padding-right: 50%;
     overflow-y: scroll;
     margin-left: 10%;
-    height: 650px;
+    height: 500px;
 } 
 .fa-comment
 {
@@ -171,6 +172,7 @@ h1 , h2 , h3
 /* Track */
 ::-webkit-scrollbar-track {
     background: grey; 
+    
 }   
 /* Handle */
 ::-webkit-scrollbar-thumb 
@@ -242,6 +244,7 @@ h1 , h2 , h3
     position: static;
     font-size: 18px;
     margin-left: 26%;
+    margin-bottom: 2rem;
 }
 .float-childReview
 {
@@ -294,4 +297,61 @@ h1 , h2 , h3
 {
     list-style: none;
     cursor: pointer;
+}
+.similarMovie {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+.similarMovie:hover {
+    border-color: #6ac045 !important;
+}
+#makeComment {
+    background-color: #171717;
+    padding: 1rem;
+    margin: 3rem .2rem;
+    box-shadow: black 2px 2px 2px 2px;
+    margin-left: 10%;
+}
+#makeComment textarea {
+    overflow: hidden; 
+    resize: none; 
+    height: 39px;
+    background-color: #1d1d1d;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: .5rem;
+    font-size: bold;
+    border-radius: .3rem;
+}
+#makeComment input {
+    position: relative;
+    top: 15px;
+    background: none;
+    border: none;
+    color: #919191;
+    font-size: 1rem;
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+#makeComment input:hover {
+    color: white;
+}
+#more {display: none;}
+#myBtn {
+    position: relative;
+    background: none;
+    border: none;
+    color: #919191;
+    font-size: 1rem;
+    margin-left: .4rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+#myBtn:hover {
+    border: none;
+    color: white;
 }
