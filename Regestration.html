@@ -2,7 +2,7 @@
 <html>
     <head>
     <title>Regestration</title>
-    <link rel="stylesheet" href="Regestration.css">
+    <link rel="stylesheet" href="./css/Regestration.css">
     </head>
 
     <body>
@@ -12,21 +12,26 @@
         <div class="container">
             <form action="post" id="form1">
                 <label id="label1">Register Now it's Free!</label><br><br>
-                <input type="text" name="username" placeholder="Username " class="in"><br><br>
-                <input type="text" name="username" placeholder=" Email" class="in"><br><br>
+                <input type="text" name="fname" id="fnameInp" placeholder="First Name" class="in"><br><br>
+                <input type="text" name="lname" id="lnameInp" placeholder="Last Name" class="in"><br><br>
+                <input type="text" name="age" id="ageInp" placeholder="Age " class="in"><br><br>
+                <input type="email" name="email" id="emailInp" placeholder=" Email" class="in"><br><br>
 
-                <input type="password" name="pass" placeholder="password" class="in"><br><br>
-                            <input type="password" name="pass" placeholder="Confirm password" class="in"><br><br>
+                <input type="password" name="pass" id="passwordInp" placeholder="password" class="in"><br><br>
+                <input type="password" name="confirm" id="confirmInp" placeholder="Confirm password" class="in"><br><br>
 
                 <label id="label2">arleady have account?</label>
                 <a href="login.html" class="link1"> Login. </a><br>
 
                 <label id="label3">By clicking Register you agree to</label>
                <span id="l"> <a href="reset.html" class="link2"> our terms and conditions </a> <br><br></span>
-                <input type="submit" value="Register" class="btn">
+                <input type="button" id="submitBtn" disabled value="Register" class="btn">
 
             </form>
         </div>
-
+        <script src="./js/all.min.js"></script>
+        <script src="./js/cookie.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="./js/regestration.js"></script>
     </body>
 </html>
