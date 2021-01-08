@@ -1,18 +1,18 @@
-function Movie(id, title, release_date, vote_average, genre_ids, overview, poster_path, original_language) {
+function Tv(id, name, first_air_date, vote_average, genre_ids, overview, poster_path, original_language) {
     Object.defineProperty(this, "id", {  
         value: id,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "title", {  
-        value: title,
+    Object.defineProperty(this, "name", {  
+        value: name,
         configurable: false,
         enumerable:false,
         writable:false
     });
-    Object.defineProperty(this, "release_date", {  
-        value: release_date,
+    Object.defineProperty(this, "first_air_date", {  
+        value: first_air_date,
         configurable: false,
         enumerable:false,
         writable:false

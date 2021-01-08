@@ -137,7 +137,7 @@ xhr.onreadystatechange = function() {
                          //var title= jsObj['data']['movies'][countt]['title'];
                          //console.log(im)
                          var col = document.createElement('td');
-                         col.innerHTML = '<a href=""><div class="container"><img id="iii" src='+movies[countt].getPoster()+' alt=""><div class="layer" style="text-align: center;"></div><h1 class="starr"><span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;"></span><p>'+movies[countt].getRating()+'<p><input type="button" class="button" value="View Details"></h1><a style="text-align: center;" href="#"><h5 style="margin-top: 3px;">'+movies[countt].getTitle()+'</h5></a><p>2018</p></div></a>'
+                         col.innerHTML = '<a href=""><div class="container"><img id="iii" src='+movies[countt].getPoster()+' alt=""><div class="layer" style="text-align: center;"></div><h1 class="starr"><span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;"></span><p>'+movies[countt].getRating()+'<p><input type="button" class="button" value="View Details"></h1><a style="text-align: center;" href="../movieDetails.html"><h5 style="margin-top: 3px;">'+movies[countt].getTitle()+'</h5></a><p>2018</p></div></a>'
                          //col.innerHTML = '<a href=""><div class="container"><img src='+movies[countt].getPoster()+' alt=""><div class="layer" style="text-align: center;"></div><h1 class="starr"><span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;"></span></h1><a style="text-align: center;" href="#"><h5 style="margin-top: 3px;">'+movies[countt].getTitle()+'</h5></a><p>2018</p></div></a>'
                          //col.innerHTML = '<td><div class="container"><img src="/images/111.jpg" alt=""><div class="layer" style="text-align: center;"><span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;"></span></div><a style="text-align: center;" href="#"><h5 style="margin-top: 3px;">Spider-Man: Into the Spider-Vers</h5></a><p>2018</p></div></td>'
                          //$('table').append(row);
@@ -162,13 +162,6 @@ xhr.onreadystatechange = function() {
                     $(this).children('[id=iii]').css("border-color", "white");
 
                 });
-
-
-                 
-        
-        
-        
-        
         
                 }
          else {
@@ -178,40 +171,8 @@ xhr.onreadystatechange = function() {
      //3) send req data-->POST
     xhr.send("");
 
-    
-    
-
-
-
-    
-    
-
-
-
     $('a').mouseout(function(){  
         //$(this).children('[class=layer]').fadeOut();
         
     });
-
-
-
  })
-/*
-<a href="">
-    <div class="container">
-        <img src='+moviesSortedBySeeds[countt].getPoster()+' alt="">
-            <div class="layer" style="text-align: center;"></div>
-            <span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;"></span>
-            <a style="text-align: center;" href="#">
-                <h5 style="margin-top: 3px;">'+moviesSortedBySeeds[countt].getTitle()+'</h5>
-            </a>
-            <p>2018</p>
-    </div>
-</a>*/
-
-/*The mouseleave event differs from mouseout in the way it handles event bubbling. 
-If mouseout were used in this example, then when the mouse pointer moved out of the Inner element,
-the handler would be triggered. This is usually undesirable behavior. 
-The mouseleave event, on the other hand, only triggers its handler when the mouse leaves the element it is bound to, not a descendant.
-So in this example, the handler is triggered when the mouse leaves the Outer element,
-but not the Inner element.*/

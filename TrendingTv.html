@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>Trending Tvs</title>
+        <link rel="stylesheet" type="text/css" href="./css/browse_movies.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "./css/style1.css"/>  
+        <link rel="stylesheet" href="./css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="nav">
+            <ul class="ulNav">
+                <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                <li style="margin-top: 20px;" class="colorFont">&nbsp;|&nbsp; </li>
+                <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                <li><a style="color: #919191;" href="/TrendingMovie.html">Trending Movies</a></li>
+                <li><a style="color: #919191;" href="/TrendingTv.html">Trending Tvs</a></li>
+                <li><a style="color: #919191;" href="browse-movies.html">Browse</a></li>
+                <li><a style="color: #919191;" href="index.html">Home</a></li>
+                <li style="margin-top:19px; margin-right: 100px;"><input placeholder=" Search..." type="text" name="" id=""></li>
+            </ul>
+        </div>
+        <div>
+            <!-- Start Listing Section -->
+            <div id="listingSection">
+                <div class="container">
+                    <h3><span id="totalNumMovies"></span> 24h YIFY Trending Tvs</h3>
+                    <div id="pagination">
+                        <ul>
+                            <li>
+                                <input type="button" id="firstBtn" class="hidden" value="« First">
+                            </li>
+                            <li>
+                                <input type="button" id="prevBtn" class="hidden" value="« Previous">
+                            </li>
+                            <li class="active">
+                                <input type="button" value="1">
+                            </li>
+                            <li id="paginitionBtn">
+                                <input type="button" value="2">
+                            </li>
+                            <li>
+                                <input type="button" value="3">
+                            </li>
+                            <li>
+                                <input type="button" value="4">
+                            </li>
+                            <li>
+                                <input type="button" value="5">
+                            </li>
+                            <li>
+                                <input type="button" value="6">
+                            </li>
+                            <li>
+                                <input type="button" value="7">
+                            </li>
+                            <li>
+                                <input type="button" value="8">
+                            </li>
+                            <li>
+                                <input type="button" disabled style="cursor: not-allowed;" value="...">
+                            </li>
+                            <li>
+                                <input type="button" value="999">
+                            </li>
+                            <li>
+                                <input type="button" value="1000">
+                            </li>
+                            <li>
+                                <input type="button" id="nextBtn" value="Next »">
+                            </li>
+                            <li>
+                                <input type="button" id="lastBtn" value="Last »">
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="moviesListing">
+                        <table>
+                            <tbody id="tableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="pagination">
+                        <ul>
+                            <li class="active">
+                                <input type="button" value="1">
+                            </li>
+                            <li>
+                                <input type="button" value="2">
+                            </li>
+                            <li>
+                                <input type="button" value="3">
+                            </li>
+                            <li>
+                                <input type="button" value="4">
+                            </li>
+                            <li>
+                                <input type="button" value="5">
+                            </li>
+                            <li>
+                                <input type="button" value="7">
+                            </li>
+                            <li>
+                                <input type="button" value="8">
+                            </li>
+                            <li>
+                                <input type="button" value="...">
+                            </li>
+                            <li>
+                                <input type="button" value="1250">
+                            </li>
+                            <li>
+                                <input type="button" value="1251">
+                            </li>
+                            <li>
+                                <input type="button" value="Next >>">
+                            </li>
+                            <li>
+                                <input type="button" value="Last >>">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End Listing Section -->
+
+            <div class="footer" style="text-align: center; font-weight: bold;">
+                <p ><span class="colorFont">YTS&#169;2011 - 2021 - </span><a href="">Blog</a> <span class="colorFont">-</span> <a href="">Login</a> <span class="colorFont">-</span> <a href="">Contact</a> </p>
+                <p><span class="colorFont">By using this site you agree to and accept our </span><a href="">User Agreement</a><span class="colorFont"> ,which can be read</span> <a href="">here</a></p>
+            </div>
+        </div>
+        
+        <script src="./js/all.min.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="./js/tvClass.js"></script>
+        <script src="./js/trendingTv.js"></script>
+        <script src="./js/tvDetails.js"></script>
+    </body>
+</html>

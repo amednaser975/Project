@@ -1,4 +1,3 @@
-
 $(function () {
     
     var MovieDetails;
@@ -31,7 +30,7 @@ $(function () {
         }
     }
     function displayMovieDetails(movieDetails) {
-        movieImg.attr("src", imgPrefix+movieDetails.backdrop_path);
+        movieImg.attr("src", imgPrefix+movieDetails.poster_path);
         titleMovie.text(movieDetails.original_title);
         release_dateMovie.text(movieDetails.release_date);
         geners.text(genresOfMovie.join("  |  "));
@@ -87,12 +86,12 @@ $(function () {
         similarMoviesContainer.innerHTML = "";
         similarMoviesContainer.innerHTML += `
                             <tr>
-                                <td><a href="../movieDetails.html?${similar[0].id}" target="_blank" ><img width="175" class="similarMovie" height="150" src="${imgPrefix+similar[0].backdrop_path}"></a></td>
-                                <td><a href="../movieDetails.html?${similar[1].id}" target="_blank" ><img width="175" class="similarMovie" height="150" src="${imgPrefix+similar[1].backdrop_path}" id="imgleft"></a></td>
+                                <td><a href="../movieDetails.html?${similar[0].id}" target="_blank" ><img class="similarMovie" src="${imgPrefix+similar[0].poster_path}"></a></td>
+                                <td><a href="../movieDetails.html?${similar[1].id}" target="_blank" ><img class="similarMovie" src="${imgPrefix+similar[1].poster_path}" id="imgleft"></a></td>
                             </tr>
                             <tr>
-                                <td><a href="../movieDetails.html?${similar[2].id}" target="_blank" ><img width="175" class="similarMovie" height="150" src="${imgPrefix+similar[2].backdrop_path}"></a></td>
-                                <td><a href="../movieDetails.html?${similar[3].id}" target="_blank" ><img width="175" class="similarMovie" height="150" src="${imgPrefix+similar[3].backdrop_path}" id="imgleft"></a></td>
+                                <td><a href="../movieDetails.html?${similar[2].id}" target="_blank" ><img class="similarMovie" src="${imgPrefix+similar[2].poster_path}"></a></td>
+                                <td><a href="../movieDetails.html?${similar[3].id}" target="_blank" ><img class="similarMovie" src="${imgPrefix+similar[3].poster_path}" id="imgleft"></a></td>
                             </tr>`;
     }
 
