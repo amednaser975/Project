@@ -1,15 +1,16 @@
-.container {
-    float: right;
-    width: 500px;
-    height: 500px;
-    margin-top: 80px;
-    margin-right: 80px
-}
 
 body {
     background-color: #222222;
     font-family: Montserrat;
 }
+.container {
+    float: right;
+    width: 500px;
+    height: 450px;
+    margin-top: 40px;
+    margin-right: 80px;
+}
+
 
 #label1 {
     font-family: Montserrat;
@@ -20,7 +21,7 @@ body {
 
 .in {
     font-size: 18px;
-    background-color: #373737;
+    background-color: #373737 !important;
     width: 355px;
     height: 40px;
     border-radius: 5px;
@@ -103,4 +104,17 @@ body {
 {
     font-size: 13px;
     width: 150px
+}
+#fnameInp, #lnameInp, #phoneInp, #emailInp, #passwordInp, #confirmInp {
+    border: 1px solid transparent;
+}
+#submitBtn {
+    cursor: not-allowed;
+}
+.reguired {
+    color: red;
+    margin-top: 4px;
+    margin-left: 10px;
+    font-size: 14px;
+    visibility: hidden;
 }

@@ -86,3 +86,9 @@ body {
     color: aliceblue;
     font-weight: bold;
 }
+.invalid {
+    display: none;
+    margin-top: -5px;
+    color: red;
+    margin-left: 11px;
+}
