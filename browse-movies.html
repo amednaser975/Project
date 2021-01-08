@@ -8,10 +8,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/all.min.css">
         <link rel="stylesheet" href="./css/browse_movies.css">
+        <link rel ="stylesheet" type ="text/css" href ="./css/style1.css"/>  
     </head>
     <body>
         <!-- Start Search Section -->
         <div id="SearchSection">
+            <div class="nav">
+                <ul class="ulNav">
+                    <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                    <li style="margin-top: 20px;" class="colorFont">&nbsp;|&nbsp; </li>
+                    <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                    <li><a style="color: #919191;" href="/TrendingMovie.html">Trending Movies</a></li>
+                    <li><a style="color: #919191;" href="/TrendingTv.html">Trending Tvs</a></li>
+                    <li><a style="color: #919191;" href="browse-movies.html">Browse</a></li>
+                    <li><a style="color: #919191;" href="index.html">Home</a></li>
+                    <li style="margin-top:19px; margin-right: 100px;"><input placeholder=" Search..." type="text" name="" id=""></li>
+                </ul>
+            </div>
             <div class="container">
                 <div id="searchComponent">
                     <h3>Search Term:</h3>
@@ -107,185 +120,6 @@
                 <div id="moviesListing">
                     <table>
                         <tbody id="tableBody">
-                            <!-- <tr>
-                                <td>
-                                    <div class="movie active">
-                                        <div class="imgPart">
-                                            <img src="./images/1.jpg" alt=""/>
-                                            <div class="shadow">
-                                                <p><i class="fas fa-star"></i></p>
-                                                <p>8/10</p>
-                                                <p>Action</p>
-                                                <div><input type="button" value="View Details"></div>
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/1.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/1.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/2.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="movie">
-                                        <div class="imgPart">
-                                            <img src="./images/3.jpg" alt=""/>
-                                        </div>
-                                        <div class="textPart">
-                                            <p>Back Street</p>
-                                            <p>1976</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -330,6 +164,10 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="footer" style="text-align: center; font-weight: bold;">
+            <p ><span class="colorFont">YTS&#169;2011 - 2021 - </span><a href="">Blog</a> <span class="colorFont">-</span> <a href="">Login</a> <span class="colorFont">-</span> <a href="">Contact</a> </p>
+            <p><span class="colorFont">By using this site you agree to and accept our </span><a href="">User Agreement</a><span class="colorFont"> ,which can be read</span> <a href="">here</a></p>
         </div>
         <!-- End Listing Section -->
         <script src="./js/all.min.js"></script>

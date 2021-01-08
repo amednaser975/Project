@@ -13,7 +13,7 @@ body
     float: left;
     padding: 20px;
 }  
-#movieImg
+#tvImg
 {
     border: 5px solid #fff;
     margin-top: 9%;
@@ -116,7 +116,7 @@ h1 , h2 , h3
     color: #fff;
     font-size: 18px;
 }
-#similarMovies img
+#similarTv img
 {
     height: 150px;
     margin-right: 5%;
@@ -303,11 +303,11 @@ h1 , h2 , h3
     list-style: none;
     cursor: pointer;
 }
-.similarMovie {
+.similarTv {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
 }
-.similarMovie:hover {
+.similarTv:hover {
     border-color: #6ac045 !important;
 }
 #makeComment {

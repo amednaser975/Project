@@ -38,7 +38,7 @@
                                                 <div class="imgPart">
                                                     <img src="${listOfItems[i].poster_path!= null?imgPrefix+listOfItems[i].poster_path: "./images/notFound.png" }" alt=""/>
                                                     <div class="shadow">
-                                                        <p><i class="fas fa-star"></i></p>
+                                                        <p><i class="fas fa-star star"></i></p>
                                                         <p>${listOfItems[i].vote_average}</p>
                                                         <p>${listOfItems[i].genre_ids[0] != undefined? getGenreName(listOfItems[i].genre_ids[0]): "General"}</p>
                                                         <div style="margin-top:4rem"><a href="../movieDetails.html?${listOfItems[i].id}" target="_blank" class="MovieDetails">View Details</a><input type="hidden" value="${listOfMovies[i].id}"></div>

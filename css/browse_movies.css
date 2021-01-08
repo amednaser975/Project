@@ -156,7 +156,7 @@ ul#searchOptions li select {
     margin: .8rem;
     font-size: 1.6rem;
 }
-.imgPart .shadow p svg {
+.imgPart .shadow p .star {
     color: #6ac045 !important;
 }
 .imgPart .shadow .MovieDetails {
