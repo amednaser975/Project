@@ -63,7 +63,9 @@ li input
     margin-top: 6px;
     background-color:black;
 }
-
+.ulNav li:hover {
+    color: #fff;
+}
 .ulNav li a {
     display: block;
     color: white;

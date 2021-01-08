@@ -232,14 +232,6 @@ xhr.onreadystatechange = function() {
                     $(this).children('[id=iii]').css("border-color", "white");
 
                 });
-
-
-                 
-        
-        
-        
-        
-        
                 }
          else {
              console.log("PAGENOTFOUND");
@@ -247,24 +239,9 @@ xhr.onreadystatechange = function() {
      };
      //3) send req data-->POST
     xhr.send("");
-
-    
-    
-
-
-
-    
-    
-
-
-
     $('a').mouseout(function(){  
-        //$(this).children('[class=layer]').fadeOut();
-        
+        //$(this).children('[class=layer]').fadeOut(); 
     });
-
-
-
  })
 /*
 <a href="">
