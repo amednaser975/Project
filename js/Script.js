@@ -2,69 +2,69 @@ var jsObj
 var temp;
 var movies = [];
 var moviesSortedBySeeds = []
-var Movie=function(ti,post,see,tim,rat,gen,dat){ //Movie Class
-    var title = ti;
-    var poster = post;
-    var popularity = see;
-    var time = tim;
-    var rating = rat;
-    var genres = gen;
-    var date = dat;
-    Object.defineProperties(this,{
-        getTitle:{
-              value:function()
-              {
-                  return title;
-              }
-          },
-         getPoster:{
-            value:function()
-            {
-                return poster;
-            }
-        },
-         getPopularity:
-         {
-             value:function()
-             {
-                return popularity;
-             }
-         },
-         getTime:
-         {
-             value:function()
-             {
-                 return time;
-             }
-         },
-         getRating:
-         {
-             value:function()
-             {
-                 return rating;
-             }
-         },
-         getGenrs:
-         {
-             value:function()
-             {
-                 return genres;
-             }
-         },
-         getDate:
-         {
-             value:function()
-             {
-                 return date;
-             }
-         }
-         
-       })
-    
-}
+
 var genersArr = [];
 $( document ).ready(function() {
-
+    var Movie=function(ti,post,see,tim,rat,gen,dat){ //Movie Class
+        var title = ti;
+        var poster = post;
+        var popularity = see;
+        var time = tim;
+        var rating = rat;
+        var genres = gen;
+        var date = dat;
+        Object.defineProperties(this,{
+            getTitle:{
+                  value:function()
+                  {
+                      return title;
+                  }
+              },
+             getPoster:{
+                value:function()
+                {
+                    return poster;
+                }
+            },
+             getPopularity:
+             {
+                 value:function()
+                 {
+                    return popularity;
+                 }
+             },
+             getTime:
+             {
+                 value:function()
+                 {
+                     return time;
+                 }
+             },
+             getRating:
+             {
+                 value:function()
+                 {
+                     return rating;
+                 }
+             },
+             getGenrs:
+             {
+                 value:function()
+                 {
+                     return genres;
+                 }
+             },
+             getDate:
+             {
+                 value:function()
+                 {
+                     return date;
+                 }
+             }
+             
+           })
+        
+    }
 
 
 
@@ -240,7 +240,8 @@ xhr.onreadystatechange = function() {
      //3) send req data-->POST
     xhr.send("");
     $('a').mouseout(function(){  
-        //$(this).children('[class=layer]').fadeOut(); 
+        //$(this).children('[class=layer]').fadeOut();
+        
     });
  })
 /*
