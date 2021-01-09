@@ -1,0 +1,195 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+body{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-color: #2f2f2f;
+    height: auto;
+
+}
+
+.username{
+    font-size: 22px;
+    padding-left: 100px;
+    padding-top: 30px;
+    color: #6AC045;
+}
+
+
+#label1
+{
+    color: #969696;
+  font-size: 15PX;
+    font-weight: bold;
+    
+    
+}
+#txt
+{
+    width: 450px;
+    height: 40px;
+    background-color: #282828;
+    border-style: hidden;
+    
+}
+
+.changePassContianer{
+    padding-left: 100px;
+    margin-bottom: 50px;
+}
+
+#float-left
+{
+    float: right;
+    color: #6AC045;
+    margin-right: 380px;
+    margin-top: -55px;
+    font-size: 22px;
+    
+    
+}
+#label2
+{
+    float: right;
+        padding-right: 80px;
+        padding-top: 4px;
+      color: #969696;
+        font-size: 15PX;
+    font-weight: bold;
+    margin-top: -18px;
+        margin-right: 270px; 
+
+}
+#float-btn
+{
+    float: right;
+        margin-top: -16px;
+        margin-right: 160px;
+    font-size: 15PX;
+    
+}
+
+
+
+
+#avatar{
+    padding-top: 20px;
+    float: right;
+    padding-right: 250px;
+    width: auto;
+    display: block;
+    height: 200px;
+    /*padding-left: 800px;*/
+    margin-bottom: 300PX;
+}
+
+.cent
+{
+    text-align: center;
+}
+table
+{
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+}
+img
+{
+   width: 180px;
+   height: 250px;
+
+}
+.container
+{
+    margin-top: 20px;
+}
+a{
+    text-decoration: none;
+}
+li input
+{
+    border-radius: 10px;
+    border: none;
+    border: solid #333333 1px;
+    background-color: black;
+    
+
+}
+.nav
+{
+    width: 100%;
+    background-color: black;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    width: 100%;
+    height: 60px;
+  }
+  
+  li {
+    float: right;
+    margin-top: 6px;
+    background-color:black;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color:black ;
+    margin: auto;
+  }
+  td h5
+  {
+    margin-left: auto;
+    margin-bottom: 0;
+    font-weight: bolder;
+    
+}
+td
+{
+    padding-left: 25px;
+}
+td p{
+    margin: 0;
+    font-size: 12px;
+    color: #919191;
+    text-align: left;
+    margin: auto;
+    
+}
+.container 
+{
+    position: relative;
+  
+
+}
+.container img{
+    border: white 5px solid;
+    border-radius: 3px;
+}
+
+
+#float-btn1
+{
+    float: right;
+    padding-top: 20px;
+    float: right;
+    padding-right: 250px;
+    
+    margin-bottom: 300PX;
+    width: 20px;
+    
+}
+

@@ -7,7 +7,14 @@ var genersArr = [];
 var time = [];
 $( document ).ready(function() {
  
-
+if(hasCookie("userData")) {
+    console.log("Existed")
+    var userName = JSON.parse(getCookie("userData")).first_name;
+    $("#loginRegisterPart").empty();
+    $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+} else {
+    console.log("Not Existed")
+}
 
 var xhrSearch = new XMLHttpRequest();
 xhrSearch.open("GET", "https://api.themoviedb.org/3/genre/movie/list?api_key=0f61e6eb5dd60b6a59d7b333deba34a0&language=en-US");
