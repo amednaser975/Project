@@ -1,4 +1,4 @@
-function Tv(id, name, first_air_date, vote_average, genre_ids, overview, poster_path, original_language) {
+function Tv(id, name, original_title, first_air_date, vote_average, genre_ids, overview, poster_path, original_language) {
     Object.defineProperty(this, "id", {  
         value: id,
         configurable: false,
@@ -7,6 +7,12 @@ function Tv(id, name, first_air_date, vote_average, genre_ids, overview, poster_
     });
     Object.defineProperty(this, "name", {  
         value: name,
+        configurable: false,
+        enumerable:false,
+        writable:false
+    });
+    Object.defineProperty(this, "original_title", {  
+        value: original_title,
         configurable: false,
         enumerable:false,
         writable:false

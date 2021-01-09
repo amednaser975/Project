@@ -10,30 +10,34 @@
 </head>
 <body>
     <div class="nav">
+        <h2 id="logo">NETFLEX</h2>
         <ul class="ulNav">
-            <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
-            <li style="margin-top: 20px;" class="colorFont">&nbsp;|&nbsp; </li>
-            <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
-            <li><a style="color: #919191;" href="/TrendingMovie.html">Trending Movies</a></li>
-            <li><a style="color: #919191;" href="/TrendingTv.html">Trending Tvs</a></li>
-            <li><a style="color: #919191;" href="browse-movies.html">Browse</a></li>
-            <li><a style="color: #919191;" href="index.html">Home</a></li>
-            <li style="margin-top:19px; margin-right: 100px;"><input placeholder=" Search..." type="text" name="" id=""></li>
+            <li id="logoutLi"><a href="../" style="text-decoration:none"> Logout</a></li>
+            <li id="loginRegisterPart" style="margin-top: 0;">
+                <ul style="list-style: none;">
+                    <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                    <li class="colorFont">&nbsp;|&nbsp; </li>
+                    <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                </ul>
+            </li>
+            <li><a  href="/TrendingMovie.html">Trending Movies</a></li>
+            <li><a  id="tvPage" href="/TrendingTv.html">Trending Tvs</a></li>
+            <li><a  href="browse-movies.html">Browse</a></li>
+            <li><a  href="index.html">Home</a></li>
         </ul>
     </div>
     <div class="float-container">
         <div id="icons" class="float-child">
-            <img id="tvImg" src="" width="300" height="300">
-            <ul class="socail">
+            <img id="tvImg" src="">
+            <!-- <ul class="socail">
                 <li id="liTwitter"><i class="fa fa-twitter" id="twitter"></i></li>
                 <li id="liPinterest"><i class="fa fa-pinterest-p" id="pinterest"></i></li>
                 <li id="liFB"><i class="fa fa-facebook-f" id="fb"></i></li>
                 <li id="liInstagram"><i class="fa fa-instagram" id="instagram"></i></li>
-            </ul>
+            </ul> -->
         </div>
-        <div class="float-child">
+        <div class="float-child" style="margin-top: 5rem;margin-left: 2rem;">
             <h1 id="titleTv"></h1>
-            <h3 id="yearTv"></h3> 
             <h3 id="geners" style="line-height: 1.5;"></h3>
             <p class="pMovie"><i class="fa fa-heart" id="likes"></i><span style="margin-left: 15%;" id="tvLikes"></span></p>
             <p class="pMovie"><i class="fa fa-users" id="users"></i><span style="margin-left: 15%;" id="tvAudience"></span></p>
@@ -76,7 +80,7 @@
             
         </div>
 
-        <div class="float-childReview" style="top: 114%;">
+        <div class="float-childReview" style="top: 140%;">
             <h2><i class="fa fa-star" id="likes" style="margin-right: 3%;"></i><span id="numOfReviews"></span> Movie Reviews</h2>
             <div id="reviewContainer">
             </div>
@@ -96,10 +100,10 @@
         </ul>
     </div>
     </div>
-    <div class="footer" style="text-align: center; font-weight: bold;">
+    <!-- <div class="footer" style="text-align: center; font-weight: bold;">
         <p ><span class="colorFont">YTS&#169;2011 - 2021 - </span><a href="">Blog</a> <span class="colorFont">-</span> <a href="">Login</a> <span class="colorFont">-</span> <a href="">Contact</a> </p>
         <p><span class="colorFont">By using this site you agree to and accept our </span><a href="">User Agreement</a><span class="colorFont"> ,which can be read</span> <a href="">here</a></p>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./js/cookie.js"></script>

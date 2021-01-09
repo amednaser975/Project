@@ -1,3 +1,34 @@
+$(function () {
+
+    if(location.href.includes("browse")) {
+        console.log("Browse")
+        $("#browsePage").addClass("activePage");
+    } else {
+        $("#browsePage").removeClass("activePage");
+    }
+    if(location.href.includes("TrendingMovie")) {
+        console.log("Browse")
+        $("#moviePage").addClass("activePage");
+    } else {
+        $("#moviePage").removeClass("activePage");
+    }
+    if(hasCookie("userData") && JSON.parse(getCookie("userData")).flag) {
+        console.log("Existed")
+        var userName = JSON.parse(getCookie("userData")).first_name;
+        $("#loginRegisterPart").empty();
+        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#logoutLi").css("display", "inline");
+        $("#toggleLogInOutBtn").text("Logout");
+    } else {
+        console.log("Not Existed");
+        $("#loginRegisterPart").html(`<ul style="list-style: none;">
+                    <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                    <li class="colorFont">&nbsp;|&nbsp; </li>
+                    <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                    </ul>`);
+        $("#toggleLogInOutBtn").text("LogIn");
+        $("#logoutLi").css("display", "none");
+    }    
     getAllGenres();
     var tableBody = document.getElementById("tableBody");
     var myBtn = $("#pagination ul li input");
@@ -294,3 +325,13 @@
                 return genersArr[i].name;
         }
     }
+    $("#logoutLi").on("click", function (e) {  
+        e.preventDefault();
+        var userDataObj = JSON.parse(getCookie("userData"))
+        userDataObj.flag = false;
+        setCookie("userData", JSON.stringify(userDataObj));
+        location.assign("../index.html");
+        $(this).css("display", "none");
+    })
+
+});

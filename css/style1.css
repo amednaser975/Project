@@ -1,38 +1,45 @@
-*{
-    font-family: 'Roboto', sans-serif;
-    color: white;
-}
+
 body{
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin: 0;
     background-color: #2f2f2f;
     height: auto;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 
 }
 .cent
 {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-top: 8rem;
 }
 table
 {
     text-align: center;
     margin-left:auto; 
     margin-right:auto;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 img
 {
    width: 200px;
    height: 315px;
+   font-family: 'Roboto', sans-serif;
+   color: white;
 
 }
 .container
 {
     margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 .container a{
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 li input
 {
@@ -40,45 +47,46 @@ li input
     border: none;
     border: solid #333333 1px;
     background-color: black;
-    
-
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 .nav
 {
     width: 100%;
     background-color: black;
-
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
-.ulNav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-    width: 100%;
-    height: 60px;
-  }
-  
 .ulNav li {
     float: right;
     margin-top: 6px;
     background-color:black;
+    font-family: 'Roboto', sans-serif;
+    color: white;
   }
-  
+
+activePage {
+    color: #4CAF50 !important;
+}
 .ulNav li a {
     display: block;
-    color: white;
+    color: #919191;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     background-color:black ;
     margin: auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease-in-out;
+    font-weight: bold;
   }
 .movElm h5
 {
     margin-left: auto;
     margin-bottom: 0;
     font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    color: white;
     
 }
 .movElm
@@ -91,18 +99,22 @@ li input
     color: #919191;
     text-align: left;
     margin: auto;
-    
+    font-family: 'Roboto', sans-serif;
+
 }
 .container 
 {
     position: relative;
-  
+    font-family: 'Roboto', sans-serif;
+
 
 }
 .container img
 {
     border: white 5px solid;
     border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+
 }
 .layer
 {  
@@ -118,17 +130,24 @@ li input
     height: 315px;
     margin: auto;
     margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+
 }
 .footer
 {
     
     margin-top: 20px;
-    border-top: 1px solid #55534d;
+    border-top: 1px solid #4b4a47;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 
 }
 .footer p a
 {
     color :#919191;
+    font-family: 'Roboto', sans-serif;
+
 }
 .starr
 {
@@ -139,6 +158,8 @@ li input
     right: 0;
     top:5px;
     margin: auto;
+    font-family: 'Roboto', sans-serif;
+
 }
 .starr input
 {
@@ -203,6 +224,70 @@ a .title
 {
     margin-bottom: 30px;
 }
+#headerText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+/* Start NavBar */
+
+.nav
+{
+    width: 100%;
+    background-color: black;
+    /* font-family: 'Roboto', sans-serif; */
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    z-index: 99999999;
+    top: 0;
+}
+#logo {
+    display: inline;
+    margin-left: 2rem;
+    color: #4CAF50;
+}
+.ulNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    background-color: black;
+    /* width: 100%; */
+    /* height: 60px; */
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  
+.ulNav li {
+    float: right;
+    margin-top: 6px;
+    background-color:black;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+.ulNav li:not(#loginRegisterPart):hover a {
+    color: #4CAF50 !important;
+}
+a.activePage {
+    color: #4CAF50 !important;
+}
+.ulNav li a {
+    display: block;
+    color: #919191;
+    text-align: center;
+    padding: 0 16px;
+    text-decoration: none;
+    background-color:black ;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease-in-out;
+  }
+/* End NavBar */
+
 /*
 .starr
 {   

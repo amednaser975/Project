@@ -6,6 +6,7 @@ body
 {
     padding: 20px;
     margin-bottom: 5%;
+    margin-top: 5rem;
 }
 .float-child 
 {
@@ -18,12 +19,12 @@ body
     border: 5px solid #fff;
     margin-top: 9%;
     margin-left: 5%;
+    width: 100%;
+    height: 400px;
 }
 #icons
 {
     width: 25%;
-    height: 40px;
-    padding-left: 3%;
 }
 .socail
 {

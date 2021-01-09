@@ -1,5 +1,35 @@
 $(function () {
     
+    
+    if(location.href.includes("movieDetails")) {
+        console.log("Browse")
+        $("#moviePage").addClass("activePage");
+    } else {
+        $("#moviePage").removeClass("activePage");
+    }
+
+    
+    if(hasCookie("userData") && JSON.parse(getCookie("userData")).flag) {
+        console.log("Existed")
+        var userName = JSON.parse(getCookie("userData")).first_name;
+        $("#loginRegisterPart").empty();
+        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginBtn").css("display", "none");
+        $("#commentInp").attr("disabled", false);
+        $("#commentSubmitBtn").css("cursor", "pointer");
+    } else {
+        console.log("Not Existed");
+        $("#loginRegisterPart").html(`<ul style="list-style: none;">
+                    <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                    <li class="colorFont">&nbsp;|&nbsp; </li>
+                    <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                    </ul>`);
+        $("#loginBtn").css("display", "block");
+        $("#commentInp").attr("disabled", true);
+        $("#commentSubmitBtn").css("cursor", "not-allowed");
+        
+    }    
+
     var MovieDetails;
     var genresOfMovie = [];
     var movieImg = $("#movieImg");
@@ -11,6 +41,7 @@ $(function () {
     var movieRate = $("#movieRate");
     var movieSynopsis = $("#movieSynopsis");
     var movieUploadedDate = $("#movieUploadedDate");
+    var movieOverview = $("#movieOverview");
 
     var imgPrefix = "https://image.tmdb.org/t/p/w500/";
     var movieID = decodeURIComponent(window.location.search).substr(1);  // ID Of Movie
@@ -41,7 +72,8 @@ $(function () {
             movieAudience.text("+18");
         movieRate.text(movieDetails.vote_average);
         movieSynopsis.text(movieDetails.overview);
-        movieUploadedDate.text(movieDetails.release_date)
+        movieUploadedDate.text(movieDetails.release_date);
+        movieOverview.text(movieDetails.overview)
     }
     // Movie Reviews
     var numOfReviews = $("#numOfReviews");
@@ -113,7 +145,6 @@ $(function () {
     });
     function displayMovieComments() {
         var commentsArr = getCookie("comment"+movieID) != undefined?  getCookie("comment"+movieID).split(";"): "";
-        console.log(commentsArr)
         if(commentsArr.length >= 0 && commentsArr.length <= 2) {
             $(".float-child3").css("display", "block");
             $(".float-child3").css("height", "auto");
@@ -151,3 +182,12 @@ function readMore(element) {
         moreText.css("display","inline");
     }
   }
+  
+  $("#logoutLi").on("click", function () {  
+        
+    var userDataObj = JSON.parse(getCookie("userData"))
+    userDataObj.flag = false;
+    setCookie("userData", JSON.stringify(userDataObj));
+    location.assign("../index.html");
+    $(this).css("display", "none");
+})

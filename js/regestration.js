@@ -101,7 +101,8 @@ $("#submitBtn").on("click", function() {
             "last_name": $("#lnameInp").val(), 
             "phone": $("#phoneInp").val(), 
             "email": $("#emailInp").val(), 
-            "password": $("#passwordInp").val()
+            "password": $("#passwordInp").val(),
+            "flag": false
         }
         if(hasCookie("userData")) {
 

@@ -1,5 +1,40 @@
 $(function () {
     
+    
+    if(location.href.includes("tvDetails")) {
+        console.log("tvdeta")
+        $("#tvPage").addClass("activePage");
+    } else {
+        $("#tvPage").removeClass("activePage");
+    }
+
+    
+    if(hasCookie("userData") && JSON.parse(getCookie("userData")).flag) {
+        console.log("Existed")
+        var userName = JSON.parse(getCookie("userData")).first_name;
+        $("#loginRegisterPart").empty();
+        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginBtn").css("display", "none");
+        $("#commentInp").attr("disabled", false);
+        $("#commentSubmitBtn").css("cursor", "pointer");
+        $("#logoutLi").css("display", "inline");
+        $("#toggleLogInOutBtn").text("Logout");
+    } else {
+        console.log("Not Existed");
+        $("#loginRegisterPart").empty();
+        $("#loginRegisterPart").html(`<ul style="list-style: none;">
+                    <li><a style="font-weight: bolder;" href="login.html" class="colorFont">Login</a></li>
+                    <li class="colorFont">&nbsp;|&nbsp; </li>
+                    <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
+                    </ul>`);
+        $("#loginBtn").css("display", "block");
+        $("#commentInp").attr("disabled", true);
+        $("#commentSubmitBtn").css("cursor", "not-allowed");
+        $("#toggleLogInOutBtn").text("LogIn");
+        $("#logoutLi").css("display", "none");
+        
+    }    
+
     var TvDetails;
     var genresOfTv = [];
     var tvImg = $("#tvImg");
@@ -150,3 +185,12 @@ function readMore(element) {
         moreText.css("display","inline");
     }
   }
+
+  $("#logoutLi").on("click", function () {  
+        
+    var userDataObj = JSON.parse(getCookie("userData"))
+    userDataObj.flag = false;
+    setCookie("userData", JSON.stringify(userDataObj));
+    location.assign("../index.html");
+    $(this).css("display", "none");
+})

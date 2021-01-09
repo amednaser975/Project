@@ -92,3 +92,6 @@ body {
     color: red;
     margin-left: 11px;
 }
+#signInBtn {
+    cursor: pointer;
+}
