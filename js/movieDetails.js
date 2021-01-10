@@ -1,5 +1,11 @@
 $(function () {
     
+     // Loading Function
+     var loading = $('#loading');
+     loading.fadeOut(4000, function () {
+ 
+         $('body').css('overflow-y', "auto");
+     })
     
     if(location.href.includes("movieDetails")) {
         console.log("Browse")
@@ -13,7 +19,7 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li><li id="imgLi"><img id="imgOfUser" src="./images/default_avatar.jpg" style="width: 30px;height: 30px;border-radius: 50%;position: relative;bottom: 6px;left: 10px;"></li>`);
         $("#loginBtn").css("display", "none");
         $("#commentInp").attr("disabled", false);
         $("#commentSubmitBtn").css("cursor", "pointer");
@@ -136,6 +142,11 @@ $(function () {
     var commentValue;
     $("#commentInp").on("change", function () {
         commentValue = $(this).val();
+        if(commentValue != "" && commentValue != undefined) {
+            commentSubmitBtn.attr("disabled", false);
+        } else {
+            commentSubmitBtn.attr("disabled", true);
+        }
     });
     var commentsContainer = document.getElementById("commentsContainer");
     commentSubmitBtn.on("click", function () { 

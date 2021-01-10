@@ -7,13 +7,21 @@ var genersArr = [];
 var time = [];
 $( document ).ready(function() {
 
+    
+    // Loading Function
+    var loading = $('#loading');
+    loading.fadeOut(5000, function () {
+
+        $('body').css('overflow-y', "auto");
+    })
+
     if(location.href.includes("index") ||
     !(location.href.includes("browse") && location.href.includes("movieDetails")
     && location.href.includes("TrendingTv") && location.href.includes("tvDetails")
     && location.href.includes("TrendingMovie"))) {
-        $("#indexPage").addClass("activePage");
+        $("#indexPage").addClass("newColor activePage");
     } else {
-        $("#indexPage").removeClass("activePage");
+        $("#indexPage").removeClass("newColor");
     }
 
     
@@ -143,10 +151,10 @@ $( document ).ready(function() {
                             <div class="container"><img id="iii" src="${moviesSortedBySeeds[countt].poster_path}" alt="">
                             <div class="layer" style="text-align: center;"></div>
                             <h1 class="starr">
-                            <span class="fa fa-star" style="color: #6ac045; margin-top: 50px; font-size: 26px;">
+                            <span class="fa fa-star newColor" style="color: #6ac045; margin-top: 50px; font-size: 26px;">
                             </span>
                             <p class="ra">${moviesSortedBySeeds[countt].vote_average}/10</p>
-                            <p classs="gen">${genn}</p><input type="button" class="button" value="View Details">
+                            <p classs="gen">${genn}</p><input type="button" class="button newBackground" value="View Details">
                             </h1>
                             <a style="text-align: center;" href="movieDetails.html?${moviesSortedBySeeds[countt].id}"><h5 class="title" style="margin-top: 3px;">${temp}</h5></a><p class='datte'>${moviesSortedBySeeds[countt].release_date}</p></div>
                             </a>
@@ -224,7 +232,7 @@ $( document ).ready(function() {
                     $('a').hover(function(){  
                         $(this).children('[class=layer]').fadeIn("fast");
                         $(this).children('[class=starr]').fadeIn("fast");
-                        $(this).children('[id=iii]').css("border-color", "#4CAF50");
+                        $(this).children('[id=iii]').css("border-color", color);
 
                     });
                     $('a').mouseleave(function(){  
@@ -248,16 +256,6 @@ $( document ).ready(function() {
         };
         //3) send req data-->POST
         xhr.send("");
-
-        
-        
-
-
-
-        
-        
-
-
 
         $('a').mouseout(function(){  
             //$(this).children('[class=layer]').fadeOut();
@@ -297,4 +295,58 @@ $( document ).ready(function() {
       1000
     );
   });
+
+   // Theme Coloring
+  
+    var colorItem = $('.color-item');
+    colorItem.eq(0).css("backgroundColor", "tomato");
+    colorItem.eq(1).css("backgroundColor", "#09c");
+    colorItem.eq(2).css("backgroundColor", "orange");
+    colorItem.eq(3).css("backgroundColor", "teal");
+    colorItem.eq(4).css("backgroundColor", "yellow");
+    var color = "#4CAF50";
+    colorItem.click(function() {
+
+        color = $(this).css("backgroundColor");
+        $(".newColor").css("color", color);
+        $(".back-to-top").css("backgroundColor", color);
+        $(".newBackground").css("backgroundColor", color);
+        $(".ulNav li a").hover(function () {
+            console.log(this);
+            $(this).css("color", color);
+            }, function () {
+                // out white
+            $(this).css("color", "#919191");
+            }
+        );
+    });
+
+
+    $("#options svg").click(function () {
+
+        let colorBoxWidth = $(".colors-box").innerWidth();
+        if($("#options").css('left') == "0px")
+        {
+            $("#options").animate({ left:`-${colorBoxWidth}`}, 1000);
+        }
+        else
+        {
+            $("#options").animate({ left:`0px`}, 1000);
+        }
+    })
+
+    $(".img-item").click( function () {
+
+        let imgSrc = $(this).attr('src');
+        $('#mainImage').attr("src", imgSrc);
+    });
+
+    $('#menu ul li a').on('click', function(event) {
+
+        console.log("Ahmed");
+        event.preventDefault();
+
+    });
+
+
 })

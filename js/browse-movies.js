@@ -1,5 +1,22 @@
 $(function () {
 
+
+    
+    setTimeout(function() {
+        $(".listingSection").css("display", "block");
+    }, 1000)
+    // Loading Function
+    var loading = $('#loading');
+    loading.fadeOut(5000, function () {
+
+        $('body').css('overflow-y', "auto");
+    })
+    var loading1 = $('#loading1');
+    loading1.fadeOut(5000, function () {
+
+        $('body').css('overflow-y', "auto");
+    })
+
     if(location.href.includes("browse")) {
         console.log("Browse")
         $("#browsePage").addClass("activePage");
@@ -16,7 +33,7 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="./profile.html"" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li><li id="imgLi"><img id="imgOfUser" src="./images/default_avatar.jpg" style="width: 30px;height: 30px;border-radius: 50%;position: relative;bottom: 6px;left: 10px;"></li>`);
         $("#toggleLogInOutBtn").text("Logout");
         $("#logoutLi").css("display", "inline");
     } else {
@@ -330,7 +347,7 @@ $(function () {
         var userDataObj = JSON.parse(getCookie("userData"))
         userDataObj.flag = false;
         setCookie("userData", JSON.stringify(userDataObj));
-        location.assign("../index.html");
+        location.assign("../browse-movies.html");
         $(this).css("display", "none");
     })
      
