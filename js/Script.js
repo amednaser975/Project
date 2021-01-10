@@ -312,11 +312,12 @@ $( document ).ready(function() {
         $(".back-to-top").css("backgroundColor", color);
         $(".newBackground").css("backgroundColor", color);
         $(".ulNav li a").hover(function () {
-            console.log(this);
+
             $(this).css("color", color);
+
             }, function () {
-                // out white
-            $(this).css("color", "#919191");
+                
+                $(this).css("color", "#919191");
             }
         );
     });
