@@ -7,6 +7,7 @@ $("#signInBtn").click(function (e) {
         
         var userDataObj = JSON.parse(getCookie("userData"))
         userDataObj.flag = true;
+        userDataObj.Last_Seen = new Date();
         setCookie("userData", JSON.stringify(userDataObj));
 
         location.assign("../index.html");

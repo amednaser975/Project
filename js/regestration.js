@@ -102,7 +102,11 @@ $("#submitBtn").on("click", function() {
             "phone": $("#phoneInp").val(), 
             "email": $("#emailInp").val(), 
             "password": $("#passwordInp").val(),
-            "flag": false
+            "flag": false,
+            "imgPath": "../images/default_avatar.jpg",
+            "numOfComments": 0,
+            "joinedDate": new Date(),
+            "Last_Seen": ""
         }
         if(hasCookie("userData")) {
 

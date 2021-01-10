@@ -361,3 +361,44 @@ h1 , h2 , h3
     border: none;
     color: white;
 }
+#userName {
+    margin-bottom: 0;
+    display: inline-block;
+    bottom: 20px;
+    position: relative;
+    margin-left: 5px;
+    color: #6ac045;
+}
+#commentText {
+    display: block;
+    margin-left: 5rem;
+    margin-top: 0;
+}
+
+/* Start Scroll To Top button */
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #4CAF50;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    border-radius: 50%;
+    right: 15px;
+    bottom: 15px;
+    transition: all 0.5s ease;
+    z-index: 11;
+}
+.back-to-top i 
+{
+    padding-top: 12px;
+    color: #fff;
+}
+.testing
+{
+    color: #4CAF50;
+}
+/* End Scroll To Top button */

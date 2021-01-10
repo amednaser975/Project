@@ -14,7 +14,9 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginBtn").css("display", "none");
+        $("#logoutLi").css("display", "inline");
     } else {
         console.log("Not Existed");
         $("#loginRegisterPart").html(`<ul style="list-style: none;">
@@ -22,6 +24,8 @@ $(function () {
                     <li style="margin-top: 20px;" class="colorFont">&nbsp;|&nbsp; </li>
                     <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
                     </ul>`);
+        $("#loginBtn").css("display", "block");
+        $("#logoutLi").css("display", "none");
     }   
 
     getAllGenres();
@@ -329,4 +333,27 @@ $(function () {
         location.assign("../index.html");
         $(this).css("display", "none");
     })
+     
+    // Scroll To Top button
+    var scrollToTop = $(".back-to-top");
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 1000) {
+        if (scrollToTop.is(":hidden")) {
+            scrollToTop.css("display", "block");
+        }
+        } else {
+            scrollToTop.css("display", "none");
+        }
+    });
+  
+    // Click On scrollToTop To Go Up 
+    scrollToTop.click(function(event) {
+    event.preventDefault();
+    $("html , body").animate(
+        {
+        scrollTop: 0
+        },
+        1000
+    );
+    });
 });

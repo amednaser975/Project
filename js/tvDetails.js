@@ -13,7 +13,7 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li>`);
         $("#loginBtn").css("display", "none");
         $("#commentInp").attr("disabled", false);
         $("#commentSubmitBtn").css("cursor", "pointer");
@@ -142,6 +142,9 @@ $(function () {
         commentsOfTv = getCookie("comment"+tvID) != undefined? getCookie("comment"+tvID): "";
         commentsOfTv += commentValue + ";";
         setCookie("comment"+tvID, commentsOfTv);
+        var userDataObj = JSON.parse(getCookie("userData"))
+        userDataObj.numOfComments = parseInt(userDataObj.numOfComments)+ 1;
+        setCookie("userData", JSON.stringify(userDataObj));
         commentsContainer.innerHTML = "";
         displayTvComments();
     });
@@ -194,3 +197,26 @@ function readMore(element) {
     location.assign("../index.html");
     $(this).css("display", "none");
 })
+ 
+  // Scroll To Top button
+  var scrollToTop = $(".back-to-top");
+  $(window).scroll(function() {
+      if ($(window).scrollTop() >= 1000) {
+      if (scrollToTop.is(":hidden")) {
+          scrollToTop.css("display", "block");
+      }
+      } else {
+          scrollToTop.css("display", "none");
+      }
+  });
+  
+// Click On scrollToTop To Go Up 
+scrollToTop.click(function(event) {
+  event.preventDefault();
+  $("html , body").animate(
+        {
+        scrollTop: 0
+        },
+        1000
+  );
+});

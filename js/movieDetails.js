@@ -13,10 +13,11 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#loginRegisterPart").html(`<li><a href="./profile.html" style="text-decoration:none">${userName}...</a></li>`);
         $("#loginBtn").css("display", "none");
         $("#commentInp").attr("disabled", false);
         $("#commentSubmitBtn").css("cursor", "pointer");
+        $("#logoutLi").css("display", "inline");
     } else {
         console.log("Not Existed");
         $("#loginRegisterPart").html(`<ul style="list-style: none;">
@@ -27,6 +28,7 @@ $(function () {
         $("#loginBtn").css("display", "block");
         $("#commentInp").attr("disabled", true);
         $("#commentSubmitBtn").css("cursor", "not-allowed");
+        $("#logoutLi").css("display", "none");
         
     }    
 
@@ -140,6 +142,9 @@ $(function () {
         commentsOfMovie = getCookie("comment"+movieID) != undefined? getCookie("comment"+movieID): "";
         commentsOfMovie += commentValue + ";";
         setCookie("comment"+movieID, commentsOfMovie);
+        var userDataObj = JSON.parse(getCookie("userData"))
+        userDataObj.numOfComments = parseInt(userDataObj.numOfComments)+ 1;
+        setCookie("userData", JSON.stringify(userDataObj));
         commentsContainer.innerHTML = "";
         displayMovieComments();
     });
@@ -152,19 +157,20 @@ $(function () {
             $(".float-child3").css("display", "block");
             $(".float-child3").css("height", "400px");
         }
+        var userName = JSON.parse(getCookie("userData")).first_name;
+        console.log(userName)
         $("#numberOfComments").text(commentsArr.length == 0? commentsArr.length: commentsArr.length-1);
         for (var i = 0; i < commentsArr.length && commentsArr[i] != ""; i++) {
             commentsContainer.innerHTML += `
                     <div class="comment">
                         <img src="images/default_avatar.jpg" class="userImg">
-                        <p class="commentTxt">${commentsArr[i]}</p>
-                        <div class="divComment">
-                            <p class="pMovie"> 0 <i class="fa fa-heart likes"></i></p>
-                        </div>
+                        <p id="userName">${userName}</p>
+                        <p id="commentText">${commentsArr[i]}</p>
                     </div>`;
         
         }
     }
+    
     displayMovieComments();
 });
 
@@ -185,9 +191,32 @@ function readMore(element) {
   
   $("#logoutLi").on("click", function () {  
         
-    var userDataObj = JSON.parse(getCookie("userData"))
-    userDataObj.flag = false;
-    setCookie("userData", JSON.stringify(userDataObj));
-    location.assign("../index.html");
-    $(this).css("display", "none");
-})
+        var userDataObj = JSON.parse(getCookie("userData"))
+        userDataObj.flag = false;
+        setCookie("userData", JSON.stringify(userDataObj));
+        location.assign("../index.html");
+        $(this).css("display", "none");
+    })
+     
+    // Scroll To Top button
+    var scrollToTop = $(".back-to-top");
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 1000) {
+        if (scrollToTop.is(":hidden")) {
+            scrollToTop.css("display", "block");
+        }
+        } else {
+            scrollToTop.css("display", "none");
+        }
+    });
+  
+    // Click On scrollToTop To Go Up 
+    scrollToTop.click(function(event) {
+    event.preventDefault();
+    $("html , body").animate(
+        {
+        scrollTop: 0
+        },
+        1000
+    );
+    });

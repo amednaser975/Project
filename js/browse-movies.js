@@ -16,9 +16,9 @@ $(function () {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
-        $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
-        $("#logoutLi").css("display", "inline");
+        $("#loginRegisterPart").html(`<li><a href="./profile.html"" style="text-decoration:none">${userName}...</a></li>`);
         $("#toggleLogInOutBtn").text("Logout");
+        $("#logoutLi").css("display", "inline");
     } else {
         console.log("Not Existed");
         $("#loginRegisterPart").html(`<ul style="list-style: none;">
@@ -333,5 +333,27 @@ $(function () {
         location.assign("../index.html");
         $(this).css("display", "none");
     })
-
+     
+    // Scroll To Top button
+    var scrollToTop = $(".back-to-top");
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 1000) {
+        if (scrollToTop.is(":hidden")) {
+            scrollToTop.css("display", "block");
+        }
+        } else {
+            scrollToTop.css("display", "none");
+        }
+    });
+  
+    // Click On scrollToTop To Go Up 
+    scrollToTop.click(function(event) {
+    event.preventDefault();
+    $("html , body").animate(
+        {
+        scrollTop: 0
+        },
+        1000
+    );
+    });
 });

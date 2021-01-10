@@ -9,18 +9,21 @@ $( document ).ready(function() {
 
     if(location.href.includes("index") ||
     !(location.href.includes("browse") && location.href.includes("movieDetails")
-    && location.href.includes("TrendingTv") && location.href.includes("tvDetails"))
-    && location.href.includes("TrendingMovie")) {
+    && location.href.includes("TrendingTv") && location.href.includes("tvDetails")
+    && location.href.includes("TrendingMovie"))) {
         $("#indexPage").addClass("activePage");
     } else {
         $("#indexPage").removeClass("activePage");
     }
 
+    
     if(hasCookie("userData") && JSON.parse(getCookie("userData")).flag) {
         console.log("Existed")
         var userName = JSON.parse(getCookie("userData")).first_name;
         $("#loginRegisterPart").empty();
         $("#loginRegisterPart").html(`<li><a href="../" style="text-decoration:none">${userName}...</a></li>`);
+        $("#logoutLi").css("display", "inline");
+        $("#loginBtn").css("display", "none");
     } else {
         console.log("Not Existed");
         $("#loginRegisterPart").html(`<ul style="list-style: none;">
@@ -28,6 +31,8 @@ $( document ).ready(function() {
                     <li style="margin-top: 20px;" class="colorFont">&nbsp;|&nbsp; </li>
                     <li><a style="font-weight: bolder;" href="Regestration.html" class="colorFont">Register</a></li>
                     </ul>`);
+        $("#logoutLi").css("display", "none");
+        $("#loginBtn").css("display", "block");
     }
 
     var xhrSearch = new XMLHttpRequest();
@@ -259,7 +264,7 @@ $( document ).ready(function() {
             
         });
         
-    $("#logoutLi").on("click", function (e) {  
+    $(".ulNav").on("click", "#logoutLi", function (e) {  
         
         
         e.preventDefault();
@@ -269,4 +274,27 @@ $( document ).ready(function() {
         location.assign("../index.html");
         $(this).css("display", "none");
     })
+    
+  // Scroll To Top button
+    var scrollToTop = $(".back-to-top");
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 1000) {
+        if (scrollToTop.is(":hidden")) {
+            scrollToTop.css("display", "block");
+        }
+        } else {
+            scrollToTop.css("display", "none");
+        }
+    });
+    
+  // Click On scrollToTop To Go Up 
+  scrollToTop.click(function(event) {
+    event.preventDefault();
+    $("html , body").animate(
+      {
+        scrollTop: 0
+      },
+      1000
+    );
+  });
 })

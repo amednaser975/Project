@@ -43,9 +43,10 @@ function hasCookie(cookieName) {
     if(arguments.length == 1) {
         for (let i = 0; i < document.cookie.split(";").length; i++) {
             
-            if(cookieName == document.cookie.split(";")[i].split("=")[0])
+            if(cookieName == (document.cookie.split(";")[i].split("=")[0]).trim())
                 return true;
         }
+        return false;
     } else 
         throw new Error("Not Valid Parameters");
 }
